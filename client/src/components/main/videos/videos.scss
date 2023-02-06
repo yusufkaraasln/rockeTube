@@ -1,0 +1,104 @@
+.videos_container {
+  height: 90%;
+  background: rgb(32, 32, 32);
+  // border: 3px solid #424242;
+  border-radius: 1rem;
+  position: relative;
+}
+.videos_options {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  position: relative;
+  .go-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: #242526;
+    color: #ffa31a;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: #ffa31a;
+      color: #242526;
+    }
+  }
+  .add_video,
+  .upload_bulk {
+    background: #242526;
+    border: 1px solid #424242;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: all 0.5s ease;
+    &:hover {
+      background: #424242;
+    }
+  }
+}
+
+.userList {
+  flex: 4;
+  color: #fff;
+  &User {
+    display: flex;
+    color: #fff;
+    gap: 1rem;
+    align-items: center;
+  }
+  &Img {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &Delete,
+  &Edit {
+    color: #fff !important;
+    cursor: pointer;
+    outline: none;
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+    transition: all 0.5s ease;
+
+    background: rgb(172, 77, 77) !important;
+    border: rgb(172, 77, 77) !important;
+
+    &:hover {
+      transform: scale(1.2);
+      background: red !important;
+    }
+  }
+  &Edit {
+    border: rgb(77, 172, 172) !important;
+    background: rgb(77, 172, 172) !important;
+    &:hover {
+      background: rgb(42, 224, 224) !important;
+      color: #424242 !important;
+    }
+  }
+}
+
+.css-g30425-MuiDataGrid-root .MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+.css-g30425-MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
+.css-g30425-MuiDataGrid-root .MuiDataGrid-cell:focus {
+  outline: none !important;
+}
+.css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root {
+  color: #fff !important;
+}

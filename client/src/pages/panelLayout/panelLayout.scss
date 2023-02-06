@@ -1,0 +1,16 @@
+.layout {
+  height: 100vh;
+  width: 100%;
+  background: #242526;
+  display: flex;
+  color: #fff;
+  &_container {
+    border-radius: 2rem;
+    background: rgb(32, 32, 32);
+    margin: 5rem;
+
+    padding: 2rem;
+
+    flex: 5;
+  }
+}

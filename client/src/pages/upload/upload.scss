@@ -1,0 +1,229 @@
+.container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  .wrapper {
+    width: 100%;
+    background: #242526;
+    border-radius: 2rem;
+    padding: 2rem;
+    .wrapper-directions {
+      display: flex;
+      height: 100%;
+
+      &-left {
+        span {
+          font-size: 1.5rem;
+          text-align: center;
+          display: block;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        flex: 1;
+
+        .field {
+          label {
+            font-size: 1rem;
+            display: flex !important;
+            align-items: center !important;
+            gap: .5rem !important;
+            margin-bottom: 0.5rem;
+            
+          }
+          input,
+          textarea {
+            padding: 1rem !important;
+            width: 80%;
+            background: #4d4d4d;
+            outline: none;
+            height: 2rem;
+            border: none;
+            color: #fff;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+          }
+          textarea {
+            height: 10rem;
+            resize: none;
+          }
+        }
+      }
+
+      &-right {
+        .field {
+          label {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+          }
+
+          .progress {
+            width: 100%;
+            height: 0.5rem;
+            background: #4d4d4d;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            .progress-bar {
+              height: 100%;
+              background: #fff;
+              border-radius: 0.5rem;
+              position: absolute;
+              line-height: 50px;
+              top: 0;
+              left: 0;
+              width: 0;
+            }
+          }
+
+          input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            background: #4d4d4d;
+            outline: none;
+            height: 2rem;
+            border: none;
+            color: #fff;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+          }
+        }
+        span {
+          font-size: 1.5rem;
+          text-align: center;
+          display: block;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        flex: 1;
+      }
+    }
+  }
+
+  .upload {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 30%;
+      padding: 1rem 0 !important;
+      background: #ffa31a;
+      outline: none;
+      border: none;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.preview {
+  position: absolute;
+  background-color: #00000083;
+  border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  &.hide {
+    display: none;
+  }
+  &-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    .actor_list {
+      height: 70%;
+      overflow: auto;
+      position: relative;
+      width: 30%;
+      border-radius: 2rem;
+      border: 3px solid rgb(82, 82, 82);
+      background: #242526;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      &_item {
+        background-color: #4d4d4d5e;
+        padding: 1rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &.active {
+          border: 1px solid green;
+        }
+        img {
+          height: 3rem;
+          width: 3rem;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+#close_icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.actors {
+  display: inline-block;
+  width: 80%;
+  max-width: 50rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  margin: 0 !important;
+  align-items: center;
+  padding: 1rem;
+  .selected_actors {
+    background: #ff9d0b;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    width: 15rem;
+
+    min-width: 15rem;
+    gap: 1rem;
+    &_img {
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    &_span {
+      font-size: 1rem !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+  .add_actor {
+  }
+}

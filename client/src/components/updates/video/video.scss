@@ -1,0 +1,220 @@
+.company_update {
+  height: 100%;
+  width: 100%;
+  padding-top: 5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  position: relative;
+
+  .update_modal{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    .actor_list {
+      height: 70%;
+      overflow: auto;
+      position: relative;
+      width: 30%;
+      border-radius: 2rem;
+      border: 3px solid rgb(82, 82, 82);
+      background: #242526;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      &_item {
+        background-color: #4d4d4d5e;
+        padding: 1rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &.active {
+          border: 1px solid green;
+        }
+        img {
+          height: 3rem;
+          width: 3rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    gap: 1.5rem;
+    align-items: flex-start !important;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    .update_logo_wrapper {
+      img {
+        width: 42rem !important;
+        height: 25rem;
+        object-fit: cover;
+        border-radius: 2rem;
+      }
+      position: relative;
+      .update_file {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 2rem;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
+
+        label {
+          font-size: 1.5rem;
+          font-weight: 500;
+          cursor: pointer;
+          position: absolute;
+          background: #ffa31a;
+          color: #000;
+          font-size: 1.5rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 1rem;
+          border: none;
+          outline: none;
+        }
+        input {
+          display: none;
+        }
+      }
+    }
+    overflow-x: scroll !important;
+
+    .update_actors {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      width: 100%;
+      max-width: 100rem;
+      &__list {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        gap: 1rem;
+      }
+      &__items {
+        overflow-x: scroll !important;
+        display: flex !important;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: normal;
+
+        gap: 5px !important;
+        .actor_single {
+          display: flex;
+          align-items: center;
+          background: #ffa31a;
+          padding: 0.2rem 1rem;
+          justify-content: center;
+          border-radius: 1rem;
+          span {
+            border-radius: 1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0.2rem 1rem;
+            color: #242526;
+            font-weight: 500;
+          }
+
+          img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+      }
+      i {
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: #ffa31a;
+        }
+      }
+    }
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    gap: 3rem;
+    .company_field {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 50%;
+      label {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      input,
+      textarea {
+        width: 100%;
+        height: 3rem;
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: none;
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-weight: 500;
+      }
+      textarea {
+        height: 10rem;
+        resize: none;
+      }
+    }
+    .update_this {
+      background: #ffa31a;
+      color: #000;
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: #000;
+        color: #ffa31a;
+      }
+      width: 50%;
+    }
+  }
+}
