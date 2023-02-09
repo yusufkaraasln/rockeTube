@@ -8,7 +8,10 @@ import multer from 'multer';
 import multerS3 from 'multer-s3';
 import redis from 'redis';
 
-const client = redis.createClient();
+const client = redis.createClient({
+    host: 'dockerredis',
+    port: 6379
+});
 
 const s3: any = new AWS.S3({
     accessKeyId: process.env.S3_ACCESS_KEY,

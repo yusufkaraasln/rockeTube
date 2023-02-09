@@ -1,7 +1,6 @@
 import express from 'express';
 // import uploadVideo from '../controllers/UploadVideo';
 import controller from '../controllers/Video';
-import { Schemas, validateSchema } from '../middleware/ValidateSchema';
 
 const router = express.Router();
 

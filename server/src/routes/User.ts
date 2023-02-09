@@ -1,7 +1,6 @@
 import express from 'express';
 import verify from '../middleware/ValidateUser';
 import controller from '../controllers/User';
-import { Schemas, validateSchema } from '../middleware/ValidateSchema';
 import getFromCache from '../controllers/redisCache';
 
 const router = express.Router();

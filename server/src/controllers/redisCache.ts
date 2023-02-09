@@ -4,7 +4,7 @@ import User from '../models/User';
 
 
 const redisOptions: any = {
-    host: '127.0.0.1',
+    host: 'dockerredis',
     port: 6379
 };
 
