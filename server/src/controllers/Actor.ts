@@ -3,10 +3,7 @@ import { NextFunction, Response, Request } from "express";
 import redis from "redis";
 import Actor from "../models/Actor";
 
-const client = redis.createClient({
-    host: "dockerredis",
-    port: 6379
-});
+const client = redis.createClient();
 
 
 

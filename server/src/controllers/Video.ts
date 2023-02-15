@@ -8,10 +8,7 @@ import multer from 'multer';
 import multerS3 from 'multer-s3';
 import redis from 'redis';
 
-const client = redis.createClient({
-    host: 'dockerredis',
-    port: 6379
-});
+const client = redis.createClient();
 
 const s3: any = new AWS.S3({
     accessKeyId: process.env.S3_ACCESS_KEY,
@@ -152,7 +149,7 @@ const getVideos = async (req: Request, res: Response, next: NextFunction) => {
                     .populate('comments')
                     .populate('favorites')
                     .select("-__v");
-                    
+
                 client.setex('videos', 1800, JSON.stringify(videos));
                 return res.status(200).json({
                     videos
@@ -162,7 +159,7 @@ const getVideos = async (req: Request, res: Response, next: NextFunction) => {
         }
         )
 
-        
+
     }
     catch (err) {
         res.status(500).json({

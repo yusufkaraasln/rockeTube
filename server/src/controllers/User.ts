@@ -110,10 +110,7 @@ export const stats = async (req: Request, res: Response, next: NextFunction) => 
         });
 }
 
-const client = redis.createClient({
-    host: "dockerredis",
-    port: 6379
-});
+const client = redis.createClient();
 
 export const allUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {

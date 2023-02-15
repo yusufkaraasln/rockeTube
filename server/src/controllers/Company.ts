@@ -110,10 +110,7 @@ const deleteCompany = async (req: Request, res: Response, next: NextFunction) =>
 }
 
 import redis from "redis";
-const client = redis.createClient({
-    host: "dockerredis",
-    port: 6379
-});
+const client = redis.createClient();
 
 const getCompanies = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -138,7 +135,7 @@ const getCompanies = async (req: Request, res: Response, next: NextFunction) => 
 
 
 
-       
+
     }
     catch (err) {
         res.status(500).json({
