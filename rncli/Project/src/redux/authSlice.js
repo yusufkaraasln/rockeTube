@@ -2,20 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const getUserInfo = async () => {
-  try {
-    const jsonValue = await AsyncStorage.getItem('userInfo');
-    return JSON.parse(jsonValue);
-  } catch (e) {
-    console.log('Error getting user info from storage', e);
-  }
-};
-console.log(getUserInfo()._j);
-console.log(getUserInfo()._j);
-console.log(getUserInfo()._j);
-console.log(getUserInfo()._j);
-console.log(getUserInfo()._j);
-
+ 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {

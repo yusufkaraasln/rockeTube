@@ -1,6 +1,12 @@
-import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+} from 'react-native';
 import React from 'react';
-import {Image} from 'react-native-svg';
 
 const Companies = () => {
   const [companies, setCompanies] = React.useState([]);
@@ -17,7 +23,8 @@ const Companies = () => {
       <ScrollView
         horizontal={true}
         pagingEnabled={true}
-        showsHorizontalScrollIndicator={true}>
+        
+        showsHorizontalScrollIndicator={false}>
         {companies.map((company, index) => {
           return (
             <View
@@ -31,26 +38,14 @@ const Companies = () => {
                 style={{
                   width: width - 40,
                   height: 200,
-                  resizeMode: 'contain',
+                  borderRadius: 30,
                 }}
+                resizeMode="cover"
                 source={{
                   uri: company.logo,
                 }}
               />
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  textAlign: 'center',
-                  marginTop: 10,
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  color: '#fff',
-                }}>
-                1
-              </Text>
+              
             </View>
           );
         })}
@@ -63,7 +58,10 @@ const styles = StyleSheet.create({
   container: {
     height: 200,
     borderRadius: 30,
-    backgroundColor: '#383838',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 10,
   },
 });
 

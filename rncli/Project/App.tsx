@@ -19,16 +19,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Orientation from 'react-native-orientation-locker';
 
 function App(): JSX.Element {
- 
   React.useEffect(() => {
     Orientation.lockToPortrait();
   }, []);
 
   return (
     <Provider store={store}>
-      <StatusBar barStyle="light-content" 
-      backgroundColor="#242526"
-      />
+      <StatusBar barStyle="light-content" backgroundColor="#242526" />
       <Navigation />
     </Provider>
   );

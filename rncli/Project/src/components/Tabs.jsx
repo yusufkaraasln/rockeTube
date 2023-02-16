@@ -7,9 +7,12 @@ import {StyleSheet, Text, View} from 'react-native';
 import {faHome, faSearch, faUser} from '@fortawesome/free-solid-svg-icons';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {useSelector} from 'react-redux';
+
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
+  const focused = useSelector(state => state.input.searchBar);
   return (
     <Tab.Navigator
       screenOptions={{
@@ -18,6 +21,7 @@ const Tabs = () => {
 
         tabBarStyle: {
           position: 'absolute',
+          display: focused ? 'none' : 'flex',
           bottom: 25,
           left: 20,
           right: 20,
@@ -73,7 +77,6 @@ const Tabs = () => {
         name="User"
         component={User}
       />
-       
     </Tab.Navigator>
   );
 };

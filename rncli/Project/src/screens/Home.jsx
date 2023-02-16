@@ -15,14 +15,6 @@ import Actors from '../components/Actors';
 import SingleFilm from '../components/SingleFilm';
 
 const Home = () => {
-  const user = useSelector(state => state.auth.user);
-  const dispatch = useDispatch();
-  const handleLogout = async () => {
-    await AsyncStorage.removeItem('userInfo');
-    dispatch(logout());
-  };
-
-  const arr = [1, 2, 3, 4];
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
     fetch('http://192.168.205.96:5000/api/video/get/')
@@ -37,30 +29,39 @@ const Home = () => {
         backgroundColor: '#242526',
       }}>
       <ScrollView style={styles.container}>
-        {/* <Companies /> */}
         <Text
-        style={{
-          fontSize: 18,
-          color: '#ffa31a',
-          marginTop: 20,
-          marginBottom: 10,
-        }}>
-        Most popular actors
-      </Text>
+          style={{
+            fontSize: 18,
+            color: '#ffa31a',
+            marginTop: 20,
+            marginBottom: 10,
+          }}>
+          Most popular companies
+        </Text>
+        <Companies />
+        <Text
+          style={{
+            fontSize: 18,
+            color: '#ffa31a',
+            marginTop: 20,
+            marginBottom: 10,
+          }}>
+          Most popular actors
+        </Text>
 
         <Actors />
         <Text
-        style={{
-          fontSize: 18,
-          color: '#ffa31a',
-          marginTop: 20,
-          marginBottom: 10,
-        }}>
-        Latest movies
-      </Text>
+          style={{
+            fontSize: 18,
+            color: '#ffa31a',
+            marginTop: 20,
+            marginBottom: 10,
+          }}>
+          Latest movies
+        </Text>
         {data.map(item => (
-          <SingleFilm
-            data={item}
+          <SingleFilm data={item}
+            actorsActive={true}
           key={item._id} />
         ))}
       </ScrollView>

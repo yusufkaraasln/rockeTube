@@ -11,14 +11,16 @@ import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 
-const SingleFilm = ({data}) => {
+const SingleFilm = ({data, actorsActive}) => {
   const {width, height} = Dimensions.get('window');
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Video', {
-        data
-      })}
+      onPress={() =>
+        navigation.navigate('Video', {
+          data,
+        })
+      }
       activeOpacity={0.6}>
       <View style={styles.container}>
         <View>
@@ -79,7 +81,7 @@ const SingleFilm = ({data}) => {
             justifyContent: 'flex-start',
 
             width: width - 60,
-            gap: 10,
+            gap: actorsActive ? 10 : 0,
             margin: 10,
           }}>
           <Text
@@ -87,7 +89,7 @@ const SingleFilm = ({data}) => {
               fontSize: 16,
               fontWeight: 'bold',
               color: '#ffa31a',
-              marginVertical: 10,
+              marginVertical: actorsActive ? 10 : 0,
             }}>
             {data.title}
           </Text>
@@ -99,26 +101,28 @@ const SingleFilm = ({data}) => {
               gap: 10,
               width: width - 60,
             }}>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}>
-              {data?.actors.map((actor, index) => (
-                <Text
-                  style={{
-                    fontSize: 14,
-                    borderColor: '#383838',
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    textAlign: 'center',
-                    paddingVertical: 5,
-                    paddingHorizontal: 10,
-                    marginHorizontal: 5,
-                    color: '#979797',
-                  }}>
-                  {actor?.name}
-                </Text>
-              ))}
-            </ScrollView>
+            {actorsActive && (
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}>
+                {data?.actors.map((actor, index) => (
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      borderColor: '#383838',
+                      borderWidth: 1,
+                      borderRadius: 10,
+                      textAlign: 'center',
+                      paddingVertical: 5,
+                      paddingHorizontal: 10,
+                      marginHorizontal: 5,
+                      color: '#979797',
+                    }}>
+                    {actor?.name}
+                  </Text>
+                ))}
+              </ScrollView>
+            )}
           </View>
         </View>
       </View>

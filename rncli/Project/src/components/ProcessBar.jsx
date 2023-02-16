@@ -67,15 +67,15 @@ const styles = StyleSheet.create({
   timeLeft: {
     flex: 1,
     fontSize: 12,
-    color: '#ccc',
-    paddingLeft: 10,
+    color: '#8f8f8f',
+    paddingLeft: 20,
   },
   timeRight: {
     flex: 1,
     fontSize: 12,
-    color: '#ccc',
+    color: '#8f8f8f',
     textAlign: 'right',
-    paddingRight: 10,
+    paddingRight: 20,
   },
 
   fullScreenTime: {
