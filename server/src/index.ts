@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 /* Connect to MongoDB */
 
+ 
+
+
 console.log(config.mongo.options);
 
 const connectDB = async () => {

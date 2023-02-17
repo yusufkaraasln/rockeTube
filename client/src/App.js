@@ -13,6 +13,9 @@ import Home from "../src/components/main/home/Home";
 import Users from "../src/components/main/users/Users";
 import Auth from "./pages/auth/Auth";
 import { useSelector } from "react-redux";
+import Register from "./pages/auth/Register";
+import ForgotPass from "./pages/auth/ForgotPass";
+import ResetPassword from "./pages/auth/ResetPassword";
 
 function App() {
   const user = useSelector((state) => state.auth.user);
@@ -30,6 +33,15 @@ function App() {
             <Route path="/comments" element={<Comments />} />
             <Route path="/users" element={<Users />} />
           </Route>
+          <Route
+            path="/forgot-password"
+            element={user ? <PanelLayout /> : <ForgotPass />}
+          />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/user/:id/reset-password/:token"
+            element={<ResetPassword />}
+          />
         </>
       </Routes>
     </Router>

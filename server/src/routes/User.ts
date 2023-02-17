@@ -10,6 +10,11 @@ router.post('/login', controller.login);
 router.get('/stats', controller.stats);
 router.get('/all', controller.allUsers);
 router.delete('/delete/:id', controller.deleteUser);
+router.get("/:id/verify/:token", controller.verifyEmail);
+router.post("/reset-password", controller.resetPasswordRequest);
+router.put("/:id/reset-password/:token", controller.resetPasswordWithToken);
+router.get("/check-token/:token", controller.checkToken);
+
 // router.get("/get/cache", getFromCache);
 
 

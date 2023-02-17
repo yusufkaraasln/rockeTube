@@ -8,6 +8,7 @@ export interface IUser extends Document {
     password: string;
     favorites: string[];
     role: string;
+    verified: boolean;
 }
 
 export interface IUserModel extends IUser {
@@ -41,6 +42,10 @@ const UserSchema: Schema = new Schema({
         type: String,
         enum: ['user', 'admin'],
         default: 'user'
+    },
+    verified: {
+        type: Boolean,
+        default: false
     }
 
 

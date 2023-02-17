@@ -20,17 +20,16 @@
 
     &_input {
       width: 80%;
-
       height: 40px;
       margin-bottom: 20px;
       margin: 10px 1rem;
       padding: 10px;
-      border: 3px solid #ccc;
+      border: 2px solid #ffa31a59;
       border-radius: 5px;
+      background: #242526;
       outline: none;
-      &:focus {
-        border-color: #ffa31a;
-      }
+      color: #ccc;
+
     }
 
     &_input:disabled {
@@ -46,9 +45,9 @@
       border: none;
       border-radius: 5px;
       background-color: #ffa31a;
-      color: #fff;
+      color: #242526;
       font-size: 1.2rem;
-      font-weight: 700;
+      font-weight: 500;
       cursor: pointer;
     }
 
@@ -64,6 +63,33 @@
       background-color: #ccc;
       color: #666;
       cursor: not-allowed;
+    }
+  }
+}
+
+.register,
+.forgot_pass {
+  display: flex;
+  align-items: center;
+  color: #666;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+
+  &_link {
+    font-weight: bold;
+    color: #ffa31a;
+
+    line-height: 1.4;
+    cursor: pointer;
+  }
+}
+
+.forgot_pass {
+  span {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
