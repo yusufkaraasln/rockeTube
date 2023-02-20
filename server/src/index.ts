@@ -112,3 +112,5 @@ const startServer = () => {
 
 }
 connectDB();
+
+export default app;
