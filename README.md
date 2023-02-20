@@ -45,6 +45,10 @@ A movie watching mobile app with web admin panel
   * React Native
   * Redux
   * ...3th Party Libraries
+* For Test
+  * Chai
+  * Mocha
+  * Chai Http
   
 ## Installation
 
