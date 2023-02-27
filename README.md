@@ -21,6 +21,7 @@ A movie watching mobile app with web admin panel
   * TypeScript
   * Express
   * Redis (MemCache)
+  * JWT
   * ...3th Party Libraries
 * For Database
   * MongoDB
